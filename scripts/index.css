@@ -1,0 +1,12 @@
+.container {
+    width: 120;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+select{
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+}
