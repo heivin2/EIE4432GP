@@ -33,10 +33,19 @@
                 </li>
             </ul>
         </div>
-      <form class="d-flex" role="search" class="input-group-text" id="icon-input-addon">
-        <input id="search-input" class="form-control me-0 bi bi-search" type="search" placeholder="Search" aria-label="Search"/>
-    </form>
-        <button class="btn btn-outline-success" type="submit" ><i class="bi bi-search search-icon"></i></button>
+<form class="flex items-center border-2 rounded border-2 border-white bg-black h-10 w-[260px] xl:w-[300px]" role="search" style="border: 2px solid white;" id="icon-input-addon">
+  <input 
+    id="search-input" 
+    type="search" 
+    placeholder="Search" 
+    aria-label="Search"
+    class="flex-1 bg-transparent text-white focus:bg-black placeholder:text-white px-2 text-sm border-0 shadow-none outline-none"/>
+  <button 
+    type="submit"
+    class="grid place-items-center bg-transparent rounded-full text-white hover:bg-brand-dark mr-1 h-8 w-8 border-0 shadow-none outline-none">
+    <i class="bg-transparent bi bi-search search-icon"></i>
+  </button>
+</form>
         <button type="button" class="btn btn-outline-light ms-1" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
     </div>
     </div>
