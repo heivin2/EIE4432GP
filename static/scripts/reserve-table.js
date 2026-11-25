@@ -63,4 +63,3 @@ $(".table").on("click", function () {
 
 
 
-
