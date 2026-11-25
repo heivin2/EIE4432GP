@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:server": "node --watch src/index.js",
+    "dev:browser": "browser-sync start --proxy 'localhost:3000' --files 'public/**/*, views/**/*' --no-open",
+    "dev": "npm run dev:server & npm run dev:browser"
   },
   "repository": {
     "type": "git",
@@ -13,13 +16,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/heivin2/EIE4432GP/issues"
   },
   "homepage": "https://github.com/heivin2/EIE4432GP#readme",
   "dependencies": {
     "ejs": "^7.0.2",
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "mysql2": "^3.22.5"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
   }
 }

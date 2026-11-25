@@ -21,6 +21,7 @@ CREATE TABLE concert(
   name VARCHAR(100) NOT NULL,
   date DATE NOT NULL,
   location VARCHAR(100) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
   image_url VARCHAR(255),
   expired BOOLEAN NOT NULL DEFAULT FALSE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -34,11 +35,12 @@ VALUES
 INSERT INTO users (username, password, role, enabled)
 VALUES ('26015839D_ChuiChunHei', '26015839D', 'student', TRUE);
 
-INSERT INTO concert (name, date, location, image_url, expired)
+INSERT INTO concert (name, date, location, price, image_url, expired)
 VALUES
-  ('The BIG WHOP OP', '2027-01-12', 'Hong Kong Coliseum', 'static\assets\Concert1.webp', FALSE),
-  ('311', '2027-01-17', 'Hong Kong Coliseum', 'static\assets\Concert2.jpg', FALSE),
-  ('The BIG WHOP OP', '2027-01-14', 'Hong Kong Coliseum', 'static\assets\Concert3.png', FALSE),
-  ('The BIG WHOP OP', '2027-01-15', 'Hong Kong Coliseum', 'static\assets\concert4.jpg', FALSE);
+  ('The BIG WHOP OP', '2027-01-12', 'Hong Kong Coliseum', 50.00, 'assets/Concert1.webp', FALSE),
+  ('311', '2027-01-17', 'Hong Kong Coliseum', 45.00, 'assets/Concert2.jpg', FALSE),
+  ('The BIG WHOP OP', '2027-01-14', 'Hong Kong Coliseum', 55.00, 'assets/Concert3.png', FALSE),
+  ('The BIG WHOP OP', '2027-01-15', 'Hong Kong Coliseum', 60.00, 'assets/concert4.jpg', FALSE);
 
-SELECT * FROM users;
+SELECT * FROM concert;
+  
