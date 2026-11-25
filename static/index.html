@@ -52,38 +52,41 @@
            <h3>
             <label for="gender"></label>
                 <select id="gender">
-                    <option value="" disabled>Please choose</option>
+                    <option value="">Filter</option>
                     <option selected text-center>Concert</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
            </h3>
-            <div class=" row justify-content-center featured-drinks d-flex flex-row">
-                <div class="concert-container col-12 col-md-4 col-lg-3">
-                    <div class="concert" style="height: 600px;">
+            <div class="container text-right d-flex flex-row flex-fill flex-column">
+                <div id="drink-menu" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+                    <div class="concert col">
                         <a href="concert1.html"><img src="assets/Concert1.webp" class="w-100 h-75 object-fit-cover rounded" alt="Concert1" width="500" height="600"></a>
                     </div>
-                </div>
-
-
-                <div class="concert-container col-12 col-md-4 col-lg-3 ">
-                    <div class="concert" style="height: 600px;">
-                        <a href="concert2.html"><img src="assets/Concert2.jpg" class="w-100 h-75 object-fit-cover rounded"alt="Concert2" width="500" height="600"></a>
+                    
+                    <div class="concert col">
+                        <a href="concert2.html"><img src="assets/Concert2.jpg" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2"></a>
+                        <br>
+                        <span class="concert-name fw-bold fs-xl">Concert 2</span>
+                        <br>
+                        <span class="fg-secondary fs-sm" style="--tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity, 1));">Location: Hong Kong Coliseum</span>
+                        <br>
+                        <span class="fg-secondary fs-sm">Date: 2027-01-17</span>
+                        <br>
+                        <span class="fg-secondary fs-sm">Price: $50</span>
+                    </div>
+                    <div class="concert col">
+                        <a href="concert3.html"><img src="assets/Concert3.png" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert3"></a>
+                        <br>
+                        <span class="concert-name fw-bold fs-xl">Concert 3</span>
+                        <br>
+                        <span class="fg-4 fs-sm">Location: Hong Kong Coliseum</span>
+                        <span class="fg-4 fs-sm">Date: 2027-01-17</span>
+                        <br>
+                        <span class="fg-4 fs-sm">Price: $50</span>
                     </div>
                 </div>
-
-                <div class="concert-container col-12 col-md-4 col-lg-3 ">
-                    <div class="concert" style="height: 600px;">
-                        <a href="order.html"><img src="assets/Concert3.png" class="w-100 h-75 object-fit-cover rounded"alt="Concert3" width="500" height="600"></a>
-                    </div>
-                </div>
-
-                <div class="concert-container col-12 col-md-4 col-lg-3 ">
-                    <div class="concert" style="height: 600px;">
-                        <img src="assets/concert4.jpg" class="w-100 h-75 object-fit-cover rounded"alt="Concert4" width="500" height="600"></a>
-                    </div>
-                </div>
-        
             </div>
         </section>
     </main>

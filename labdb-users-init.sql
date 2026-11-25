@@ -16,6 +16,16 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE concert(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  date DATE NOT NULL,
+  location VARCHAR(100) NOT NULL,
+  image_url VARCHAR(255),
+  expired BOOLEAN NOT NULL DEFAULT FALSE,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO users (username, password, role, enabled)
 VALUES
   ('root', 'root1234', 'admin', TRUE),
@@ -23,5 +33,12 @@ VALUES
   ('bob', 'bob1234', 'student', FALSE);
 INSERT INTO users (username, password, role, enabled)
 VALUES ('26015839D_ChuiChunHei', '26015839D', 'student', TRUE);
+
+INSERT INTO concert (name, date, location, image_url, expired)
+VALUES
+  ('The BIG WHOP OP', '2027-01-12', 'Hong Kong Coliseum', 'static\assets\Concert1.webp', FALSE),
+  ('311', '2027-01-17', 'Hong Kong Coliseum', 'static\assets\Concert2.jpg', FALSE),
+  ('The BIG WHOP OP', '2027-01-14', 'Hong Kong Coliseum', 'static\assets\Concert3.png', FALSE),
+  ('The BIG WHOP OP', '2027-01-15', 'Hong Kong Coliseum', 'static\assets\concert4.jpg', FALSE);
 
 SELECT * FROM users;
