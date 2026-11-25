@@ -10,6 +10,7 @@ const pool = mysql.createPool({
   user: "root",
   password: "admin_mysql",
   database: "labdb",
+  dateStrings: true,
   waitForConnections: true,
   connectionLimit: 10,
 });
