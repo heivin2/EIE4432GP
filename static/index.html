@@ -10,7 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="scripts/index.css">
+    <link rel="stylesheet" href="style/style.css">
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -55,19 +56,23 @@
     
 
 
-    <main class="flex-fill">
+    <main class="flex-fill container">
         <section>
            <h2 class="section-header text-left">Concert</h2>
-           <h3>
-            <label for="gender"></label>
-                <select id="gender">
-                    <option value="">Filter</option>
-                    <option selected text-center>Concert</option>
+           <div class="filter mb-3 flex flex-wrap items-center gap-2">
+                <select id="gender" class="inline-flex bg-danger text-white bg-opacity-75 w-fit" >
+                    <option selected value="">Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
-           </h3>
-            <div class="container text-right d-flex flex-row flex-fill flex-column">
+                <select id="language" class="inline-flex bg-danger text-white bg-opacity-75 w-fit" >
+                    <option selected value="">Language</option>
+                    <option value="english">English</option>
+                    <option value="chinese">Chinese</option>
+                </select>
+            </div>
+            
+            <div class="text-right d-flex flex-row flex-fill flex-column">
                 <div id="drink-menu" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                     <div class="concert col">
                         <a href="concert1.html"><img src="assets/Concert1.webp" class="w-100 h-75 object-fit-cover rounded" alt="Concert1" width="500" height="600"></a>
@@ -78,12 +83,11 @@
                         <br>
                         <span class="concert-name fw-bold fs-xl">Concert 2</span>
                         <br>
-                        <span class="fg-secondary fs-sm" style="--tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity, 1));">Location: Hong Kong Coliseum</span>
+                        <span class="text-secondary fs-sm">Location: Hong Kong Coliseum</span>
                         <br>
-                        <span class="fg-secondary fs-sm">Date: 2027-01-17</span>
+                        <span class="text-secondary fs-sm">Date: 2027-01-17</span>
                         <br>
-                        <span class="fg-secondary fs-sm">Price: $50</span>
+                        <span class="text-secondary fs-sm">Price: $50</span>
                     </div>
                     <div class="concert col">
                         <a href="concert3.html"><img src="assets/Concert3.png" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert3"></a>
