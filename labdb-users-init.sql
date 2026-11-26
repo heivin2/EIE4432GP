@@ -40,9 +40,9 @@ VALUES ('26015839D_ChuiChunHei', '26015839D', 'student', TRUE);
 INSERT INTO concert (name, date, location, price, image_url, expired, gender, language)
 VALUES
   ('The BIG WHOP OP', '2027-01-12', 'Hong Kong Coliseum', 50.00, 'assets/Concert1.webp', FALSE, 'Male', 'Chinese'),
-  ('311', '2027-01-17', 'Hong Kong Coliseum', 45.00, 'assets/Concert2.jpg', FALSE, 'Female', 'English'),
-  ('The BIG WHOP OP', '2027-01-14', 'Hong Kong Coliseum', 55.00, 'assets/Concert3.png', FALSE, 'Male', 'Chinese'),
+  ('311', '2027-01-17', 'Hong Kong Coliseum', 45.00, 'assets/Concert2.jpg', FALSE, 'Female', 'Chinese'),
+  ('The BIG WHOP OP', '2027-01-14', 'Hong Kong Coliseum', 55.00, 'assets/Concert3.png', FALSE, 'Male', 'English'),
   ('The BIG WHOP OP', '2027-01-15', 'Hong Kong Coliseum', 60.00, 'assets/concert4.jpg', FALSE, 'Female', 'English');
 
-SELECT * FROM concert;
+SELECT * , DATE_FORMAT(STR_TO_DATE('2027-01-13T16:00:00.000Z', '%Y-%m-%dT%H:%i:%s.%fZ'), '%Y-%m-%d') AS date FROM concert
   
