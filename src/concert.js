@@ -17,9 +17,7 @@ async function fetch_concert(filter) {
   else{
   // filter = filter.replace(/\\/g, "");
   const sql = `SELECT * , DATE_FORMAT(STR_TO_DATE('2027-01-13T16:00:00.000Z', '%Y-%m-%dT%H:%i:%s.%fZ'), '%Y-%m-%d') AS date FROM concert ${filter}`;
-  console.log(sql);
   const [rows] = await pool.query(sql);
-  console.log(rows);
   return rows;
   }
 }
