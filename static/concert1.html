@@ -9,11 +9,10 @@
         <link rel="stylesheet" href="styles/style.css">
         <style>
             .card {
-                border-radius: 10px;
                 padding-left: 200px;
                 padding-right: 200px;
                 display: flex;
-                background-color: #5007078f;
+                background-color: #464141;
                 color: #ffffff;
             }
             .photo{
@@ -31,22 +30,33 @@
                 padding-top: 20px;
             }
             .session{
-                padding-left: 40px;
+                padding-left: 10px;
                 padding-right: 20px;
                 padding-top: 20px;
             }
             .session_card{
                 display:flex;
                 align-items: center;
-
-                
-
                 height: 120px;
-
                 border: 1px solid #bbb9b9;
                 border-radius: 10px;
                 padding-left: 20px;
                 padding-right: 40px;
+            }
+
+            .session2{
+                margin: 10px auto;
+                width: 90%;
+                max-width: 1200px;
+            }
+
+            .tag{
+                font-size: 11px;
+                border-radius: 5px;
+                padding: 3px 5px;
+                white-space: nowrap;
+                background-color: #ecd2ea;
+                color: #e11d48;
             }
         </style>
     </head>
@@ -90,12 +100,12 @@
     </nav>
     </header>
 
-        <div class="card flex flex-column align-items-left justify-content-left mt-5">
+
+        <div class="card flex flex-column align-items-left justify-content-left">
             <br>
-            <br>
-            <h2 class="text-left"><strong>Concert 1</strong></h2>
+            <h2 class="text-left"><strong>On Fire</strong></h2>
             <h7>📅15th February, 2027   -   21st February, 2027</h7>
-            <h7>📍Foundation museum - ABC Osetun Street</h7>
+            <h7>📍Foundation Coliseum - ABC Osetun Street</h7>
             <br>
             <h7>It has been 5 years since their last album release! In the upcoming concert, will their be any surprise waiting for their fans?</h7>
             <br>
@@ -104,7 +114,7 @@
                 <img src="assets/concert1.webp" alt="Concert 1" class="img-fluid">
             </div>
             <br>
-                <a href="current_tours.html">Back</a>
+                <h6 style="text-decoration-line: underline;"><a href="current_tours.html">Back</a></h6>
         </div>
         <div class="session_container">
             <div class="session">
@@ -118,14 +128,54 @@
                     <div style="font-size: 13px; color: grey">Mon</div>
                 </div>
             <div>
-                <div style="margin-bottom: 2px;">ABC land</div>
-                <span class="text-secondary fs-sm">Time: 7:00 PM - Foundation museum</span>
+                <div style="margin-bottom: 1px;">ABC land<span class="tag"><strong>•Sold out soon</strong></span></div>
+                <span class="text-secondary fs-sm">Time: 7:00 PM - Foundation Coliseum</span>
                 <br>
-                <div style="margin-top: 5px;"><strong>$450</strong></div>
+                <div style="margin-top: 5px;"><strong>$450+</strong></div>
+            </div>
+                <a href="my_ticket.html" class="btn btn-primary" style="margin-left: auto;">Book Now</a>
+            </div>
+        </div>
+
+
+
+        <div class="session2">
+            <div class="session_card">
+                <div style="text-align: center; width: 60px;">
+                    <div style="font-size: 16px; font-weight: bold;">Feb</div>
+                    <div style="font-size: 28px;"><strong>18</strong></div>
+                    <div style="font-size: 13px; color: grey">Thur</div>
+                </div>
+            <div>
+                <div style="margin-bottom: 2px;">ABC land</div>
+                <span class="text-secondary fs-sm">Time: 7:00 PM - Foundation Coliseum</span>
+                <br>
+                <div style="margin-top: 5px;"><strong>$450+</strong></div>
+            </div>
+                <a href="my_ticket.html" class="btn btn-primary" style="margin-left: auto;">Book Now</a>
+            </div>
+        </div>
+
+     
+        
+        <div class="session2">
+            <div class="session_card">
+                <div style="text-align: center; width: 60px;">
+                    <div style="font-size: 16px; font-weight: bold;">Feb</div>
+                    <div style="font-size: 28px;"><strong>21</strong></div>
+                    <div style="font-size: 13px; color: grey">Sun</div>
+                </div>
+            <div>
+                <div style="margin-bottom: 2px;">ABC land<span class="tag"><strong>•Sold out soon</strong></span></div>
+                <span class="text-secondary fs-sm">Time: 7:00 PM - Foundation Coliseum</span>
+                <br>
+                <div style="margin-top: 5px;"><strong>$450+</strong></div>
             </div>
                 <a href="my_ticket.html" class="btn btn-primary" style="margin-left: auto;">Book Now</a>
             </div>
         </div>
     </body>
-
+ <footer>
+        <p class="text-center p-3" style="background-color: black; color: white;">&copy; &lt;26015388d &gt; &lt;Kwok Chun Lai&gt; - EIE4432 Group Project</p>
+    </footer>
 </html>
