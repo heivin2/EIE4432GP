@@ -24,7 +24,9 @@ CREATE TABLE concert(
   price DECIMAL(10, 2) NOT NULL,
   image_url VARCHAR(255),
   expired BOOLEAN NOT NULL DEFAULT FALSE,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  gender VARCHAR(6) NOT NULL,
+  language VARCHAR(100) NOT NULL
 );
 
 INSERT INTO users (username, password, role, enabled)
@@ -35,12 +37,12 @@ VALUES
 INSERT INTO users (username, password, role, enabled)
 VALUES ('26015839D_ChuiChunHei', '26015839D', 'student', TRUE);
 
-INSERT INTO concert (name, date, location, price, image_url, expired)
+INSERT INTO concert (name, date, location, price, image_url, expired, gender, language)
 VALUES
-  ('The BIG WHOP OP', '2027-01-12', 'Hong Kong Coliseum', 50.00, 'assets/Concert1.webp', FALSE),
-  ('311', '2027-01-17', 'Hong Kong Coliseum', 45.00, 'assets/Concert2.jpg', FALSE),
-  ('The BIG WHOP OP', '2027-01-14', 'Hong Kong Coliseum', 55.00, 'assets/Concert3.png', FALSE),
-  ('The BIG WHOP OP', '2027-01-15', 'Hong Kong Coliseum', 60.00, 'assets/concert4.jpg', FALSE);
+  ('The BIG WHOP OP', '2027-01-12', 'Hong Kong Coliseum', 50.00, 'assets/Concert1.webp', FALSE, 'Male', 'Chinese'),
+  ('311', '2027-01-17', 'Hong Kong Coliseum', 45.00, 'assets/Concert2.jpg', FALSE, 'Female', 'English'),
+  ('The BIG WHOP OP', '2027-01-14', 'Hong Kong Coliseum', 55.00, 'assets/Concert3.png', FALSE, 'Male', 'Chinese'),
+  ('The BIG WHOP OP', '2027-01-15', 'Hong Kong Coliseum', 60.00, 'assets/concert4.jpg', FALSE, 'Female', 'English');
 
 SELECT * FROM concert;
   

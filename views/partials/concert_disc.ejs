@@ -1,0 +1,15 @@
+        <div class="card flex flex-column align-items-left justify-content-left">
+            <br>
+            <h2 class="text-left"><strong><%= concert.name %></strong></h2>
+            <h7><%= concert.date %>   -   <%= concert.end_date %></h7>
+            <h7><%= concert.venue %></h7>
+            <br>
+            <h7><%= concert.description %></h7>
+            <br>
+            <h4>Starting from $<%= concert.price %></h4>
+            <div class="photo ml-auto">
+                <img src="<%= concert.image %>" alt="<%= concert.name %>" class="img-fluid">
+            </div>
+            <br>
+                <h6 style="text-decoration-line: underline;"><a href="#" onclick="history.back(); return false;">Back</a></h6>
+        </div>

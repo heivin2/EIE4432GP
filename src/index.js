@@ -13,7 +13,7 @@ const app = express();
 const PORT = 8080;
 
 async function fetch_concert(req) {
-  const response = await fetch(`http://${req.headers.host}/concert`);
+  const response = await fetch(`http://${req.headers.host}/concertlist`);
   return await response.json();
 }
 
@@ -48,14 +48,18 @@ app.use(
   }),
 );
 app.use(express.urlencoded({ extended: true }));
-app.use('/concert', concert);
+app.use('/concertlist', concert);
 app.use("/assets", express.static("static/assets"));
 app.use("/scripts", express.static("static/scripts"));  
 app.use("/styles", express.static("static/styles"));  
 // Redirect the root path to the existing Lab 4 home page
 app.get("/", async (req, res) => {
-    const concerts = await fetch_concert(req);
-    res.render("index.ejs", { concerts });
+    res.render("index.ejs");
+});
+
+app.get("/concert/:id", async (req, res) => {
+  const concert = await fetch_concert(req);
+  res.render("concert_page.ejs", { concert });
 });
 
 app.get("/login.html", (req, res) => {
