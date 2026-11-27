@@ -4,7 +4,7 @@
     const concertContainer = document.getElementById('concert-menu');
     posts.forEach(post => {
       concertContainer.innerHTML += `
-        <a href="concerts/${post._id.toString()}" class="concert_card col">
+        <a href="/concerts/${post._id.toString()}" class="concert_card col">
           <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
           <br>
           <span class="concert-name fw-bold fs-xl">${post.name}</span>
@@ -37,7 +37,7 @@ const response = await fetch('/concerts/filter', {
   concertContainer.innerHTML = ``;
     posts.forEach(post => {
         concertContainer.innerHTML += `
-                        <a href="concerts/${post._id.toString()}" class="concert_card col">
+                        <a href="/concerts/${post._id.toString()}" class="concert_card col">
                         <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
                         <br>
                         <span class="concert-name fw-bold fs-xl">${post.name}</span>
@@ -69,7 +69,7 @@ const response = await fetch('/concerts/filter', {
   concertContainer.innerHTML = ``;
     posts.forEach(post => {
         concertContainer.innerHTML += `
-                        <a href="concerts/${post._id.toString()}" class="concert_card col">
+                        <a href="/concerts/${post._id.toString()}" class="concert_card col">
                         <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
                         <br>
                         <span class="concert-name fw-bold fs-xl">${post.name}</span>
