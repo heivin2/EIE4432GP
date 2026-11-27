@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-<!--Student ID: 26015388d ; Enhanced version: Below first line -->
-<!--Student Name: Kwok Chun Lai -->
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles/style.css">
+        <style>
+            .card {
+                padding-left: 200px;
+                padding-right: 200px;
+                display: flex;
+                background-color: rgba(70, 65, 65, 0.6);
 
-<head>
-    <meta charset="UTF-8"> <!--Optional: Enhanced version -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Optional: Enhanced version -->
-    <title>Concert Ticket Selling system</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/style.css">
+                opacity: 0.6;
+                color: #ffffff;
+            }
+            .con{
+                background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+                    url('../<%= concert.image %>');
+                background-size:cover;
+            }
+            .photo{
+                display: flex;
+                position:absolute;
+                right: 220px;
+                width: 250px;
+                height: 250px;
+                margin-top: 10px;
+            }
+            .session_container{
+                margin: 20px auto;
+                width: 90%;
+                max-width: 1200px;
+                padding-top: 20px;
+            }
+            .session{
+                padding-left: 10px;
+                padding-right: 20px;
+                padding-top: 20px;
+            }
+            .session_card{
+                display:flex;
+                align-items: center;
+                height: 120px;
+                border: 1px solid #bbb9b9;
+                background-color: rgba(255,255,255,0.7);
+                border-radius: 10px;
+                padding-left: 20px;
+                padding-right: 40px;
+            }
 
-</head>
+            .session2{
+                margin: 10px auto;
+                width: 90%;
+                max-width: 1200px;
+            }
 
-<body class="d-flex flex-column min-vh-100">
+            .tag{
+                font-size: 11px;
+                border-radius: 5px;
+                padding: 3px 5px;
+                white-space: nowrap;
+                background-color: #ecd2ea;
+                color: #e11d48;
+            }
+        </style>
+    </head>
+
+    <body class="d-flex con flex-column min-vh-100">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -24,13 +80,13 @@
                     <a href="#" class="nav-link fw-bold link-secondary">CURRENT TOURS</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a href="order.html" class="nav-link fw-bold link-secondary">ABOUT</a>
+                    <a href="about.html" class="nav-link fw-bold link-secondary">ABOUT</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a href="reserve.html" class="nav-link fw-bold link-secondary">CONTACT</a>
+                    <a href="support.html" class="nav-link fw-bold link-secondary">SUPPORT</a>
                 </li>
                  <li class="nav-item px-3 text-nowrap">
-                    <a href="menu.html" class="nav-link fw-bold link-secondary">MY TICKET</a>
+                    <a href="my_ticket.html" class="nav-link fw-bold link-secondary">MY TICKET</a>
                 </li>
             </ul>
         </div>
@@ -52,20 +108,83 @@
     </div>
     </nav>
     </header>
-    
-    
 
 
-    <main class="flex-fill container">
-        <section>
-            <% include('partials/concert_disc.ejs', { concert: concert }) %>
-        </section>
-    </main>
+        <div class="card flex flex-column align-items-left justify-content-left">
+            <br>
+            <h2 class="text-left"><strong><%= concert.name %></strong></h2>
+            <h7><%= concert.dates %></h7>
+            <h7><%= concert.venue %></h7>
+            <br>
+            <h7><%= concert.description %></h7>
+            <br>
+            <h4>Starting from $450</h4>
+            <div class="photo ml-auto">
+                <img src="../<%= concert.image %>" alt="<%= concert.name %>">
+            </div>
+            <br>
+                <h6 style="text-decoration-line: underline;"><a href="current_tours.html">Back</a></h6>
+        </div>
+        <div class="session_container">
+            <div class="session">
+                <h6 class="rounded opacity-75 bg-white d-inline"><strong>Select your session</strong></h6>
+            </div>
 
-    <footer>
-        <p class="text-center p-3" style="background-color: black; color: white;">&copy; &lt;26015388d &gt; &lt;Kwok Chun Lai&gt; - EIE4432 Lab 3 Project</p>
+            <div class="session_card">
+                <div style="text-align: center; width: 60px;">
+                    <div style="font-size: 16px; font-weight: bold;">Feb</div>
+                    <div style="font-size: 28px;"><strong>15</strong></div>
+                    <div style="font-size: 13px; color: grey">Mon</div>
+                </div>
+            <div>
+                <div style="margin-bottom: 1px;">ABC land<span class="tag"><strong>•Sold out soon</strong></span></div>
+                <span class="text-secondary fs-sm">Time: 7:00 PM - Foundation Coliseum</span>
+                <br>
+                <div style="margin-top: 5px;"><strong>$450+</strong></div>
+            </div>
+                <a href="my_ticket.html" class="btn btn-primary" style="margin-left: auto;">Book Now</a>
+            </div>
+        </div>
+
+
+
+        <div class="session2">
+            <div class="session_card">
+                <div style="text-align: center; width: 60px;">
+                    <div style="font-size: 16px; font-weight: bold;">Feb</div>
+                    <div style="font-size: 28px;"><strong>18</strong></div>
+                    <div style="font-size: 13px; color: grey">Thur</div>
+                </div>
+            <div>
+                <div style="margin-bottom: 2px;">ABC land</div>
+                <span class="text-secondary fs-sm">Time: 7:00 PM - Foundation Coliseum</span>
+                <br>
+                <div style="margin-top: 5px;"><strong>$450+</strong></div>
+            </div>
+                <a href="my_ticket.html" class="btn btn-primary" style="margin-left: auto;">Book Now</a>
+            </div>
+        </div>
+
+     
+        
+        <div class="session2">
+            <div class="session_card">
+                <div style="text-align: center; width: 60px;">
+                    <div style="font-size: 16px; font-weight: bold;">Feb</div>
+                    <div style="font-size: 28px;"><strong>21</strong></div>
+                    <div style="font-size: 13px; color: grey">Sun</div>
+                </div>
+            <div>
+                <div style="margin-bottom: 2px;">ABC land<span class="tag"><strong>•Sold out soon</strong></span></div>
+                <span class="text-secondary fs-sm">Time: 7:00 PM - Foundation Coliseum</span>
+                <br>
+                <div style="margin-top: 5px;"><strong>$450+</strong></div>
+            </div>
+                <a href="my_ticket.html" class="btn btn-primary" style="margin-left: auto;">Book Now</a>
+            </div>
+        </div>
+    </body>
+ <footer>
+        <p class="text-center p-3" style="background-color: black; color: white;">&copy; &lt;26015388d &gt; &lt;Kwok Chun Lai&gt; - EIE4432 Group Project</p>
     </footer>
-
-</body>
-
 </html>

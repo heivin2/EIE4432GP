@@ -50,18 +50,13 @@ app.use(
   }),
 );
 app.use(express.urlencoded({ extended: true }));
-app.use('/concertlist', concert);
+app.use('/concerts', concert);
 app.use("/assets", express.static("static/assets"));
 app.use("/scripts", express.static("static/scripts"));  
 app.use("/styles", express.static("static/styles"));  
 // Redirect the root path to the existing Lab 4 home page
 app.get("/", async (req, res) => {
     res.render("index.ejs");
-});
-
-app.get("/concert/:id", async (req, res) => {
-  const concert = await fetch_concert(req);
-  res.render("concert_page.ejs", { concert });
 });
 
 app.get("/login.html", (req, res) => {

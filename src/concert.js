@@ -4,7 +4,7 @@ Student Name: Chui Chun Hei
 */
 
 import express from "express";
-import {db, client} from "./db.js";
+import {db, client, ObjectId} from "./db.js";
 
 const router = express.Router();
 
@@ -24,9 +24,9 @@ async function fetch_concert(filter) {
 }
 
 async function fetch_concert_page(id) {
-  const result = await db.collection('concert').find({"expired": false});
-  const rows = [] = await pool.query(sql, [id]);
-  return rows[0];
+  const result = await db.collection('concert').findOne({"expired": false, "_id": new ObjectId(`${id}`)});
+  console.log(result);
+  return result;
 }
 
 router.get('/', async (req, res) => {
@@ -34,9 +34,9 @@ router.get('/', async (req, res) => {
   res.json(concert);
 });
 
-router.get('/concert/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const concert = await fetch_concert_page(req.params.id);
-  res.json(concert);
+  res.render("concert_page.ejs", { concert });
 });
 
 router.post('/filter', async (req, res) => {

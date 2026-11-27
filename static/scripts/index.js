@@ -1,10 +1,10 @@
   document.addEventListener('DOMContentLoaded', async () => {
-    const response = await fetch('/concertlist');
+    const response = await fetch('/concerts');
     const posts = await response.json();
     const concertContainer = document.getElementById('concert-menu');
     posts.forEach(post => {
       concertContainer.innerHTML += `
-        <a href="${post.image}" class="concert_card col">
+        <a href="concerts/${post._id.toString()}" class="concert_card col">
           <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
           <br>
           <span class="concert-name fw-bold fs-xl">${post.name}</span>
@@ -22,7 +22,7 @@
 const gender = document.getElementById('gender');
 const language = document.getElementById('language');
 gender.addEventListener('change', async () => {
-const response = await fetch('/concertlist/filter', {
+const response = await fetch('/concerts/filter', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ const response = await fetch('/concertlist/filter', {
   concertContainer.innerHTML = ``;
     posts.forEach(post => {
         concertContainer.innerHTML += `
-                        <a href="${post.image}" class="concert_card col">
+                        <a href="concerts/${post._id.toString()}" class="concert_card col">
                         <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
                         <br>
                         <span class="concert-name fw-bold fs-xl">${post.name}</span>
@@ -53,7 +53,7 @@ const response = await fetch('/concertlist/filter', {
 });
 
 language.addEventListener('change', async () => {
-const response = await fetch('/concertlist/filter', {
+const response = await fetch('/concerts/filter', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ const response = await fetch('/concertlist/filter', {
   concertContainer.innerHTML = ``;
     posts.forEach(post => {
         concertContainer.innerHTML += `
-                        <a href="${post.image}" class="concert_card col">
+                        <a href="concerts/${post._id.toString()}" class="concert_card col">
                         <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
                         <br>
                         <span class="concert-name fw-bold fs-xl">${post.name}</span>
