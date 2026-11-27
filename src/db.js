@@ -1,17 +1,9 @@
-/*
-Student ID: 26015839D
-Student Name: Chui Chun Hei
-*/
+import {MongoClient} from "mongodb";
+const username = process.env.MONGODB_USERNAME;
+const password = process.env.MONGODB_PASSWORD;
+const uri = process.env.MONGODB_URI;
 
-import mysql from "mysql2/promise";
-const pool = mysql.createPool({
-  host: "127.0.0.1",
-  port: 3306,
-  user: "root",
-  password: "admin_mysql",
-  database: "labdb",
-  dateStrings: true,
-  waitForConnections: true,
-  connectionLimit: 10,
-});
-export default pool;
+const client = new MongoClient(uri);
+const db = client.db('ConcertTicket');
+
+export { client, db };

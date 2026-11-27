@@ -6,9 +6,10 @@ import http from "http";
 import { URL } from "url";
 import express from "express";
 import session from 'express-session'
-import pool from "./db.js";
-import login from "./login.js";
+import {client, db} from "./db.js";
+// import login from "./login.js";
 import concert from "./concert.js";
+
 const app = express();
 const PORT = 8080;
 
@@ -19,13 +20,14 @@ async function fetch_concert(req) {
 
 async function check_db_connection() {
   try {
-    const connection = await pool.getConnection();
-    console.log("MySQL database connection is ready.");
-    connection.release();
-  } catch (error) {
-    console.error("Unable to connect to the MySQL database.");
-    console.error(error.message);
+    await client.connect();
+    const test = await db.collection('concert').findOne({'name': '311'});
+    console.log(test);
+  } 
+  catch (err) {
+    console.error("Error connecting to the database:", err);
   }
+
 }
 function requireLogin(req, res, next) {
   if (req.session.logged === true) {

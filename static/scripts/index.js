@@ -4,12 +4,12 @@
     const concertContainer = document.getElementById('concert-menu');
     posts.forEach(post => {
       concertContainer.innerHTML += `
-        <a href="${post.image_url}" class="concert_card col">
-          <img src="${post.image_url}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
+        <a href="${post.image}" class="concert_card col">
+          <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
           <br>
           <span class="concert-name fw-bold fs-xl">${post.name}</span>
           <br>
-          <span class="text-secondary fs-sm">${post.location} </span>
+          <span class="text-secondary fs-sm">${post.venue} </span>
           <br>
           <span class="text-secondary fs-sm">${post.date}</span>
           <br>
@@ -22,15 +22,14 @@
 const gender = document.getElementById('gender');
 const language = document.getElementById('language');
 gender.addEventListener('change', async () => {
-let filter_string = `WHERE gender = '${gender.value}' AND language = '${language.value}'`;
-filter_string = filter_string.replace(/= ''/g, "IS NOT NULL");
 const response = await fetch('/concertlist/filter', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      filter: filter_string
+      gender: gender.value,
+      language: language.value
     })
   });
   const posts = await response.json();
@@ -38,12 +37,12 @@ const response = await fetch('/concertlist/filter', {
   concertContainer.innerHTML = ``;
     posts.forEach(post => {
         concertContainer.innerHTML += `
-                        <a href="${post.image_url}" class="concert_card col">
-                        <img src="${post.image_url}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
+                        <a href="${post.image}" class="concert_card col">
+                        <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
                         <br>
                         <span class="concert-name fw-bold fs-xl">${post.name}</span>
                         <br>
-                        <span class="text-secondary fs-sm">${post.location} </span>
+                        <span class="text-secondary fs-sm">${post.venue} </span>
                         <br>
                         <span class="text-secondary fs-sm">${post.date}</span>
                         <br>
@@ -54,15 +53,14 @@ const response = await fetch('/concertlist/filter', {
 });
 
 language.addEventListener('change', async () => {
-let filter_string = `WHERE gender = '${gender.value}' AND language = '${language.value}'`;
-filter_string = filter_string.replace(/= ''/g, "IS NOT NULL");
 const response = await fetch('/concertlist/filter', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      filter: filter_string
+      gender: gender.value,
+      language: language.value
     })
   });
   const posts = await response.json();
@@ -71,12 +69,12 @@ const response = await fetch('/concertlist/filter', {
   concertContainer.innerHTML = ``;
     posts.forEach(post => {
         concertContainer.innerHTML += `
-                        <a href="${post.image_url}" class="concert_card col">
-                        <img src="${post.image_url}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
+                        <a href="${post.image}" class="concert_card col">
+                        <img src="${post.image}" class="w-100 h-75 object-fit-cover border-secondary border rounded "alt="Concert2">
                         <br>
                         <span class="concert-name fw-bold fs-xl">${post.name}</span>
                         <br>
-                        <span class="text-secondary fs-sm">${post.location} </span>
+                        <span class="text-secondary fs-sm">${post.venue} </span>
                         <br>
                         <span class="text-secondary fs-sm">${post.date}</span>
                         <br>
