@@ -11,13 +11,13 @@ const router = express.Router();
 async function fetch_concert(filter) {
   if (filter == null || filter == "") {
       const result = await db.collection('concert').find({"expired": false}).toArray();
-      console.log(result);
+      (result);
       return result;
   }
   else{
-      console.log(filter);
+      (filter);
       const result = await db.collection('concert').find(JSON.parse(filter)).toArray();
-      console.log(result);
+      (result);
       return result;
 
   }

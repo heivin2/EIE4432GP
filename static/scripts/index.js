@@ -64,7 +64,7 @@ const response = await fetch('/concertlist/filter', {
     })
   });
   const posts = await response.json();
-  console.log(posts);
+  (posts);
   const concertContainer = document.getElementById('concert-menu');
   concertContainer.innerHTML = ``;
     posts.forEach(post => {

@@ -12,8 +12,16 @@
                 padding-left: 200px;
                 padding-right: 200px;
                 display: flex;
-                background-color: #464141;
+                background-color: rgba(70, 65, 65, 0.6);
+
+                opacity: 0.6;
                 color: #ffffff;
+            }
+            .con{
+                background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+                    url('assets/concert1.webp');
+                background-size:cover;
             }
             .photo{
                 display: flex;
@@ -39,6 +47,7 @@
                 align-items: center;
                 height: 120px;
                 border: 1px solid #bbb9b9;
+                background-color: rgba(255,255,255,0.7);
                 border-radius: 10px;
                 padding-left: 20px;
                 padding-right: 40px;
@@ -61,7 +70,7 @@
         </style>
     </head>
 
-    <body class="d-flex flex-column min-vh-100">
+    <body class="d-flex con flex-column min-vh-100">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -118,7 +127,7 @@
         </div>
         <div class="session_container">
             <div class="session">
-                <h6><strong>Select your session</strong></h6>
+                <h6 class="rounded opacity-75 bg-white d-inline"><strong>Select your session</strong></h6>
             </div>
 
             <div class="session_card">

@@ -22,7 +22,7 @@ async function check_db_connection() {
   try {
     await client.connect();
     const test = await db.collection('concert').findOne({'name': '311'});
-    console.log(test);
+    console.log("success!!!");
   } 
   catch (err) {
     console.error("Error connecting to the database:", err);
