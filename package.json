@@ -5,9 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "server": "node --env-file=.env src/index.js",
     "dev:server": "node --env-file=.env --watch src/index.js",
     "dev:browser": "browser-sync start --proxy 'localhost:3000' --files 'public/**/*, views/**/*' --no-open",
-    "dev": "npm run dev:server & npm run dev:browser"
+    "dev": "npm run dev:server & npm run dev:browser",
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",
