@@ -10,21 +10,27 @@ const router = express.Router();
 
 async function fetch_concert(filter) {
   if (filter == null || filter == "") {
-      const result = await db.collection('concert').find({"expired": false}).toArray();
-      (result);
-      return result;
-  }
-  else{
-      (filter);
-      const result = await db.collection('concert').find(JSON.parse(filter)).toArray();
-      (result);
-      return result;
-
+    const result = await db
+      .collection("concert")
+      .find({expired: false})
+      .toArray();
+    result;
+    return result;
+  } else {
+    filter;
+    const result = await db
+      .collection("concert")
+      .find(JSON.parse(filter))
+      .toArray();
+    result;
+    return result;
   }
 }
 
 async function fetch_concert_page(id) {
-  const result = await db.collection('concert').findOne({"expired": false, "_id": new ObjectId(`${id}`)});
+  const result = await db
+    .collection("concert")
+    .findOne({expired: false, _id: new ObjectId(`${id}`)});
   if (result == null) {
     return false;
   }
@@ -32,29 +38,34 @@ async function fetch_concert_page(id) {
   return result;
 }
 
-router.get('/', async (req, res) => {
-  const concert = await fetch_concert();
-  res.json(concert);
+router.get("/", async (req, res) => {
+  const acceptsHtml =
+    req.headers.accept && req.headers.accept.includes("text/html");
+  if (acceptsHtml) {
+    res.status(501).send("501 forbidden");
+  } else {
+    const concert = await fetch_concert();
+    res.json(concert);
+  }
 });
 
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(404).send('concert not found');
+    res.status(404).send("concert not found");
     return;
   }
   const concert = await fetch_concert_page(req.params.id);
-  if (!concert){
-    res.status(404).send('concert not found');
-  }
-  else{
-    res.render("concert_page.ejs", { concert });
+  if (!concert) {
+    res.status(404).send("concert not found");
+  } else {
+    res.render("concert_page.ejs", {concert});
   }
 });
 
-router.post('/filter', async (req, res) => {
-  const { gender, language } = req.body;
+router.post("/filter", async (req, res) => {
+  const {gender, language} = req.body;
   let filter_string = `{"expired": false,"Gender": "${gender}", "Language": "${language}"}`;
-  const filter = filter_string.replace(/""/g, "{ \"$ne\": \"\" }");
+  const filter = filter_string.replace(/""/g, '{ "$ne": "" }');
   const concert = await fetch_concert(filter);
   res.json(concert);
 });

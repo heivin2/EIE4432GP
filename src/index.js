@@ -56,7 +56,7 @@ app.use("/scripts", express.static("static/scripts"));
 app.use("/styles", express.static("static/styles"));  
 // Redirect the root path to the existing Lab 4 home page
 app.get("/", async (req, res) => {
-    res.render("index.ejs");
+  res.render("index.ejs");
 });
 
 app.get("/login.html", (req, res) => {
