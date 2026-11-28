@@ -34,7 +34,7 @@ async function fetch_concert_page(id) {
   if (result == null) {
     return false;
   }
-  console.log(result);
+  (result);
   return result;
 }
 

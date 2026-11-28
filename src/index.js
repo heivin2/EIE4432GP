@@ -66,16 +66,16 @@ app.get("/home.html", requireLogin, (req, res) => {
   res.sendFile("home.html", { root: "static" });
 });
 
-app.get("/recommend.html", requireLogin, (req, res) => {
-  res.sendFile("recommend.html", { root: "static" });
+app.get("/support", (req, res) => {
+  res.sendFile("support.html", { root: "static" });
 });
 
-app.get("/order.html", requireLogin, (req, res) => {
-  res.sendFile("order.html", { root: "static" });
+app.get("/about", (req, res) => {
+  res.sendFile("about.html", { root: "static" });
 });
 
-app.get("/reserve.html", requireLogin, (req, res) => {
-  res.sendFile("reserve.html", { root: "static" });
+app.get("/my_ticket", requireLogin, (req, res) => {
+  res.sendFile("my_ticket.html", { root: "static" });
 });
 
 app.get("/menu.html", requireLogin, (req, res) => {
