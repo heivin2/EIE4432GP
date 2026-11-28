@@ -7,19 +7,17 @@ import express from "express";
 import {db, client, ObjectId} from "./db.js";
 
 const router = express.Router();
-
+const con = db.collection('concert');
 async function fetch_concert(filter) {
   if (filter == null || filter == "") {
-    const result = await db
-      .collection("concert")
+    const result = await con
       .find({expired: false})
       .toArray();
     result;
     return result;
   } else {
     filter;
-    const result = await db
-      .collection("concert")
+    const result = await con
       .find(JSON.parse(filter))
       .toArray();
     result;
@@ -28,8 +26,8 @@ async function fetch_concert(filter) {
 }
 
 async function fetch_concert_page(id) {
-  const result = await db
-    .collection("concert")
+  const result = await 
+    con
     .findOne({expired: false, _id: new ObjectId(`${id}`)});
   if (result == null) {
     return false;
