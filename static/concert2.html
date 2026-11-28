@@ -15,6 +15,12 @@
                 background-color: #3f3d3d;
                 color: #ffffff;
             }
+            .con{
+                background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+                    url('assets/concert2.webp');
+                background-size:cover;
+            }
             .photo{
                 display: flex;
                 position:absolute;
@@ -33,12 +39,16 @@
                 padding-left: 10px;
                 padding-right: 20px;
                 padding-top: 20px;
+                background-color: rgba(8, 0, 0, 0.7);
+                color: #ffffff;
             }
             .session_card{
                 display:flex;
                 align-items: center;
                 height: 120px;
                 border: 1px solid #bbb9b9;
+                background-color: rgba(8, 0, 0, 0.7);
+                color: #ffffff;
                 border-radius: 10px;
                 padding-left: 20px;
                 padding-right: 40px;
@@ -61,23 +71,23 @@
         </style>
     </head>
 
-    <body class="d-flex flex-column min-vh-100">
+    <body class="d-flex con flex-column min-vh-100">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <div class="collapse navbar-collapse justify-content-center align-items-center" id="Options">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
                 <li class="nav-item currentPage px-3 text-nowrap">
-                    <a href="#" class="nav-link fw-bold link-secondary">CURRENT TOURS</a>
+                    <a href="current_tours.html" class="nav-link fw-bold link-secondary">CURRENT TOURS</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a href="about" class="nav-link fw-bold link-secondary">ABOUT</a>
+                    <a href="about.html" class="nav-link fw-bold link-secondary">ABOUT</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a href="support" class="nav-link fw-bold link-secondary">SUPPORT</a>
+                    <a href="support.html" class="nav-link fw-bold link-secondary">SUPPORT</a>
                 </li>
                  <li class="nav-item px-3 text-nowrap">
-                    <a href="my_ticket" class="nav-link fw-bold link-secondary">MY TICKET</a>
+                    <a href="my_ticket.html" class="nav-link fw-bold link-secondary">MY TICKET</a>
                 </li>
             </ul>
         </div>
@@ -119,7 +129,7 @@
         </div>
         <div class="session_container">
             <div class="session">
-                <h6><strong>Select your session</strong></h6>
+                <h6 class=" border-secondary d-inline"><strong>Select your session</strong></h6>
             </div>
 
             <div class="session_card">

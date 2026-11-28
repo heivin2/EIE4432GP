@@ -6,5 +6,25 @@
   "image": "assets/concert2.webp",
   "Gender": "Female",
   "Language": "English",
-  "expired": false
+  "expired": false,
+  "Session": [
+    {
+      "Time": {
+        "$date": "2027-03-03T18:30:00.000Z"
+      },
+      "Venue": "The Wiltern, Los Angeles",
+      "price": 350,
+      "soldOut": false
+    },
+    {
+      "Time": {
+        "$date": "2027-03-05T18:30:00.000Z"
+      },
+      "Venue": "The Wiltern, Los Angeles",
+      "price": 350,
+      "soldOut": true
+    }
+    
+  ],
+  "description": "Prepare for an unforgettable night of soaring vocals, blistering guitar riffs and pure symphonic power metal as Siren’s Call takes over Los Angeles for The “Siren’s Ascension” Tour!\n"
 }

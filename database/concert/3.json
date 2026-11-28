@@ -1,10 +1,38 @@
 {
-  "name": "The BIG WHOP OP",
-  "date": "2027-01-14",
-  "venue": "Hong Kong Coliseum",
-  "price": 55,
+  "name": "The Wilderness Echoes",
+  "date": "2027-10-26",
+  "venue": "The Rustic Hall, Portland",
+  "price": 350,
   "image": "assets/Concert3.png",
   "Gender": "Male",
   "Language": "English",
-  "expired": false
+  "expired": false,
+  "Session": [
+    {
+      "Time": {
+        "$date": "2027-10-26T15:30:00.000Z"
+      },
+      "Venue": "The Rustic Hall, Portland",
+      "price": 350,
+      "soldOut": false
+    },
+    {
+      "Time": {
+        "$date": "2027-10-28T16:30:00.000Z"
+      },
+      "Venue": "The Rustic Hall, Portland",
+      "price": 350,
+      "soldOut": false
+    },
+    {
+      "Time": {
+        "$date": "2027-10-30T17:30:00.000Z"
+      },
+      "Venue": "The Rustic Hall, Portland",
+      "price": 350,
+      "soldOut": false
+    }
+    
+  ],
+  "description": "Prepare for an intimate, high-energy night of raw indie rock filled with hazy stage lighting, soulful vocals, and reverberating guitar riffs.\n"
 }
