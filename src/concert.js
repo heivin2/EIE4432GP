@@ -25,6 +25,9 @@ async function fetch_concert(filter) {
 
 async function fetch_concert_page(id) {
   const result = await db.collection('concert').findOne({"expired": false, "_id": new ObjectId(`${id}`)});
+  if (result == null) {
+    return false;
+  }
   console.log(result);
   return result;
 }
@@ -35,8 +38,17 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(404).send('concert not found');
+    return;
+  }
   const concert = await fetch_concert_page(req.params.id);
-  res.render("concert_page.ejs", { concert });
+  if (!concert){
+    res.status(404).send('concert not found');
+  }
+  else{
+    res.render("concert_page.ejs", { concert });
+  }
 });
 
 router.post('/filter', async (req, res) => {
