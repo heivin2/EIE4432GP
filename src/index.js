@@ -59,12 +59,6 @@ app.get("/", async (req, res) => {
   res.render("index.ejs");
 });
 
-app.get("/login.html", (req, res) => {
-  res.sendFile("login.html", { root: "static" });
-});
-app.get("/home.html", requireLogin, (req, res) => {
-  res.sendFile("home.html", { root: "static" });
-});
 
 app.get("/support", (req, res) => {
   res.render("support.ejs");
@@ -74,8 +68,8 @@ app.get("/about", (req, res) => {
   res.render("about.ejs");
 });
 
-app.get("/my_ticket", requireLogin, (req, res) => {
-  res.sendFile("my_ticket.html", { root: "static" });
+app.get("/my_ticket",(req, res) => {
+  res.render("my_ticket.ejs");
 });
 
 app.get("/menu.html", requireLogin, (req, res) => {
