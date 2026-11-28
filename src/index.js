@@ -67,11 +67,11 @@ app.get("/home.html", requireLogin, (req, res) => {
 });
 
 app.get("/support", (req, res) => {
-  res.sendFile("support.html", { root: "static" });
+  res.render("support.ejs");
 });
 
 app.get("/about", (req, res) => {
-  res.sendFile("about.html", { root: "static" });
+  res.render("about.ejs");
 });
 
 app.get("/my_ticket", requireLogin, (req, res) => {
