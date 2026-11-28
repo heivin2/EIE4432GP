@@ -3,8 +3,8 @@
   "date": "2027-02-21",
   "venue": "Hong Kong Coliseum",
   "price": 450,
-  "image": "assets/Concert2.webp",
-  "Gender": "Female",
+  "image": "assets/Concert1.webp",
+  "Gender": "Male",
   "Language": "Chinese",
   "expired": false,
   "Session": [
